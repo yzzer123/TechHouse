@@ -17,4 +17,6 @@ public class DogTest {
         System.out.println(obj2.getClass());
         System.out.println(obj.getClass().getSuperclass());
     }
+
+
 }
