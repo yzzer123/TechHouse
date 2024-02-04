@@ -2,7 +2,6 @@ package com.yzzer.sort;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.Comparator;
 
 @SuppressWarnings("unchecked")
 public abstract class BaseSorter<T> implements Sorter<T> {

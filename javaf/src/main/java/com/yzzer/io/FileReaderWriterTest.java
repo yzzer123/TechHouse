@@ -82,5 +82,21 @@ public class FileReaderWriterTest {
     }
   }
 
+  @Test
+  public void copyTest2() {
+    // 无法处理图片
+    File readFile = new File("hello.png");
+    File writeFile = new File("hello_copy.png");
 
+    try (FileReader fileReader = new FileReader(readFile);
+         FileWriter fileWriter = new FileWriter(writeFile, false)) {
+      char[] buffer = new char[4];
+      int len = 0;
+      while ((len = fileReader.read(buffer)) != -1) {
+        fileWriter.write(buffer, 0, len);
+      }
+    } catch (IOException ioe) {
+      ioe.printStackTrace();
+    }
+  }
 }
