@@ -1,4 +1,4 @@
-package sort;
+package com.yzzer.sort;
 
 import org.junit.After;
 import org.junit.Before;
