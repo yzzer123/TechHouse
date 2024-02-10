@@ -12,7 +12,7 @@ public interface Interface2 {
 
     private void method3() {
         System.out.println("method3");
-    }
+    } 
 
     public default void method4() {
         method3();

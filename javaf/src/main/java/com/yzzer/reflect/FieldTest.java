@@ -7,6 +7,9 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 
+/**
+ * JDK17 中对于 JDK Core API 做了强封装，无法通过反射访问私有属性和方法了
+ */
 public class FieldTest {
 
   @Test

@@ -7,6 +7,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class ClassLoaderTest {
@@ -59,6 +62,23 @@ public class ClassLoaderTest {
 
     assert inputStream != null;
     inputStream.close();
+  }
+
+  @Test
+  public void test5() throws Exception {
+    URL[] urls = new URL[]{new URL("file:///Users/bytedance/workspace/projects/TechHouse/algorithm/target/classes/")};
+
+    // 使用第一个类加载器加载类
+    ClassLoader loader1 = new URLClassLoader(urls);
+    Class<?> class1 = loader1.loadClass("com.yzzer.str.Kmp");
+
+    // 使用第二个类加载器加载类
+    ClassLoader loader2 = new URLClassLoader(urls);
+    Class<?> class2 = loader2.loadClass("com.yzzer.str.Kmp");
+
+    // class1 和 class2 是同一个类的两个不同版本
+    System.out.println(class1 == class2); // 输出 false
+    System.out.println(Arrays.toString(class1.getDeclaredMethods()));
   }
 
 }
