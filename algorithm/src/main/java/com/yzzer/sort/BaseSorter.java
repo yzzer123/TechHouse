@@ -6,6 +6,12 @@ import java.lang.reflect.Type;
 @SuppressWarnings("unchecked")
 public abstract class BaseSorter<T> implements Sorter<T> {
 
+    public void swap(T[] data, int i, int j) {
+      T tmp = data[i];
+      data[i] = data[j];
+      data[j] = tmp;
+    }
+
     @SuppressWarnings("rawtypes")
     @Override
     public void sort(T[] data) {
