@@ -71,10 +71,10 @@ public class SorterTest {
       sorter = new OnePivotQuickSorter<>();
     }
 
-  @Test
-  public void testQuickSort2() {
-    sorter = new DualPivotsQuickSorter<>();
-  }
+    @Test
+    public void testQuickSort2() {
+      sorter = new DualPivotsQuickSorter<>();
+    }
 
     @After
     public void tearDown() throws Exception {
