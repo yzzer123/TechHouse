@@ -26,7 +26,6 @@ public class DualPivotsQuickSorter<T> extends OnePivotQuickSorter<T> {
           swap(data, r--, i);
         } else i++;
     }
-    PriorityQueue
     swap(data, l - 1, start);
     swap(data, r + 1, end);
     return new StackStatus[]{
